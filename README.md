@@ -81,5 +81,15 @@ header {
 > 1. Vue파일을 이용한 Component 다루기
 
 ```bash
-yarn add -D eslint-config-airbnb-base eslint-plugin-import eslint-plugin-vue
+yarn add -D eslint-plugin-import eslint-plugin-vue eslint-plugin-prettier eslint-config-prettier vue-eslint-parser
+```
+
+### stylelint
+
+```bash
+npm install --save-dev stylelint stylelint-processor-html stylelint-config-standard
+
+or
+
+yarn add -D stylelint stylelint-processor-html stylelint-config-standard
 ```

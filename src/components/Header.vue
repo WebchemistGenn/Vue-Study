@@ -17,10 +17,10 @@ header {
   width: 100%;
   height: 50px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-}
 
-h1 {
-  color: $color;
-  text-shadow: 0 0 12px $color;
+  h1 {
+    color: $color;
+    text-shadow: 0 0 12px $color;
+  }
 }
 </style>

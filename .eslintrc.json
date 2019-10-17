@@ -1,14 +1,32 @@
 {
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module",
+    "allowImportExportEverywhere": false
+  },
+  "extends": [
+    "plugin:vue/recommended",
+    "eslint:recommended",
+    "plugin:prettier/recommended"
+  ],
   "env": {
     "browser": true,
     "es6": true,
     "node": true
   },
-  "parserOptions": {
-    "parser": "babel-eslint"
-  },
-  "extends": ["airbnb-base", "plugin:vue/recommended"],
+  "plugins": ["vue", "prettier"],
   "rules": {
-    "quotes": ["error", "double", { "allowTemplateLiterals": true }]
+    "no-undef": 0,
+    "no-console": 1,
+    "no-unused-vars": 1,
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": false,
+        "tabWidth": 2,
+        "printWidth": 120
+      }
+    ]
   }
 }
