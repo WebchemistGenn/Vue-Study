@@ -60,7 +60,7 @@ yarn add -D sass-loader node-sass
 
 @vue/cli를 이용한 초기설정을 하면 webpack에 sass-loader, node-sass에 대한 설정이 되어 있습니다. 하지만 기본 css를 이용하게 되어 있기 때문에 sass/scss를 사용하기 위해서는 다음 2개를 설치해주셔야 합니다.
 
-```javascript
+```markdown
 <style lang="scss" scoped>
 header {
 	backgournd-color: red;
@@ -79,12 +79,78 @@ header {
 > 주요내용
 >
 > 1. Vue파일을 이용한 Component 다루기
+> 2. eslint 설정
+> 3. stylelint 설정
+
+### eslint
+
+##### Installation
 
 ```bash
 yarn add -D eslint-plugin-import eslint-plugin-vue eslint-plugin-prettier eslint-config-prettier vue-eslint-parser
 ```
 
+##### .eslintrc.json
+
+```json
+{
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module",
+    "allowImportExportEverywhere": false
+  },
+  "extends": [
+    "plugin:vue/recommended",
+    "eslint:recommended",
+    "plugin:prettier/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "plugins": ["vue", "prettier"],
+  "rules": {
+    "no-undef": 0,
+    "no-console": 1,
+    "no-unused-vars": 1,
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": false,
+        "tabWidth": 2,
+        "printWidth": 120
+      }
+    ]
+  }
+}
+```
+
+##### setting.json
+
+```json
+// ~ eslint setting
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.packageManager": "yarn",
+  "[vue]": {
+    "editor.formatOnSave": false,
+  },
+  "prettier.disableLanguages": [
+    "vue"
+  ],
+  "eslint.validate": [
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+  ],
+```
+
 ### stylelint
+
+##### Installation
 
 ```bash
 npm install --save-dev stylelint stylelint-processor-html stylelint-config-standard
@@ -92,4 +158,38 @@ npm install --save-dev stylelint stylelint-processor-html stylelint-config-stand
 or
 
 yarn add -D stylelint stylelint-processor-html stylelint-config-standard
+```
+
+##### .stylelintrc.json
+
+```json
+{
+  "processors": ["stylelint-processor-html"],
+  "extends": "stylelint-config-standard",
+  "syntax": "scss",
+  "rules": {
+    "no-empty-source": null,
+    "color-hex-case": "lower",
+    "declaration-colon-newline-after": null,
+    "selector-pseudo-element-colon-notation": null,
+    "no-descending-specificity": null,
+    "value-list-comma-newline-after": null,
+    "rule-empty-line-before": [
+      "always",
+      {
+        "ignore": ["first-nested"]
+      }
+    ]
+  }
+}
+```
+
+##### setting.json
+
+```json
+// ~ stylelint setting
+  "stylelint.enable": true,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
 ```

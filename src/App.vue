@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HeaderComponent />
+    <HeaderComponent title="Webchemist's Theme" />
     <h1>{{ welcome }}</h1>
     <FooterComponent />
   </div>
@@ -11,15 +11,15 @@ import HeaderComponent from "./components/Header";
 import FooterComponent from "./components/Footer";
 
 export default {
-  name: "app",
-  data: function() {
-    return {
-      welcome: `Welcome`
-    };
-  },
+  name: "App",
   components: {
     HeaderComponent,
     FooterComponent
+  },
+  data: () => {
+    return {
+      welcome: `Welcome`
+    };
   }
 };
 </script>
