@@ -9,7 +9,7 @@
 <script>
 import HeaderComponent from "./components/Header";
 import FooterComponent from "./components/Footer";
-
+console.log("!!!");
 export default {
   name: "App",
   components: {
