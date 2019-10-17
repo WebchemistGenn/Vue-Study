@@ -1,4 +1,4 @@
-{
+module.exports = {
   "parser": "vue-eslint-parser",
   "parserOptions": {
     "parser": "babel-eslint",
@@ -18,6 +18,7 @@
   "plugins": ["vue", "prettier"],
   "rules": {
     "no-undef": 0,
+    "no-console": 1,
     "no-unused-vars": 1,
     "prettier/prettier": [
       "error",

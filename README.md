@@ -137,10 +137,15 @@ yarn add -D eslint-plugin-import eslint-plugin-vue eslint-plugin-prettier eslint
   "[vue]": {
     "editor.formatOnSave": false,
   },
+  "[javascript]": {
+    "editor.formatOnSave": false,
+  },
   "prettier.disableLanguages": [
-    "vue"
+    "vue",
+    "javascript"
   ],
   "eslint.validate": [
+    "javascript",
     {
       "language": "vue",
       "autoFix": true
